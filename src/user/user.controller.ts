@@ -17,7 +17,7 @@ export class UserController {
     }
 
     ifDecimal(id: number) {
-        return id % 1 !== 0;
+        return id % 1 == 0;
     }
 
     add(username: string): User {
@@ -40,8 +40,8 @@ export class UserController {
         // is the id a negative number ?
         // other checks...
 
-        if (this.ifDecimal(id)) {
-            throw new Error('Id is decimal !');
+        if (!this.ifDecimal(id)) {
+            throw new Error('Id must be integer !');
         }
 
         if (this.ifNegative(id)) {
