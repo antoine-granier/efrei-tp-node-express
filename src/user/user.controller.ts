@@ -5,7 +5,7 @@ export class UserController {
     constructor(private userService: UserService) {}
 
     ifEmpty(username: string): boolean {
-        return username === "";
+        return username === '';
     }
 
     ifWhiteSpaced(username: string): boolean {
@@ -24,12 +24,12 @@ export class UserController {
         // is the username empty ?
         // is the username whitespaced ?
         // other checks...
-        if(this.ifEmpty(username)) {
-            throw new Error("Username is empty !");
+        if (this.ifEmpty(username)) {
+            throw new Error('Username is empty !');
         }
 
-        if(this.ifWhiteSpaced(username)) {
-            throw new Error("Username is whitespaced !");
+        if (this.ifWhiteSpaced(username)) {
+            throw new Error('Username is whitespaced !');
         }
 
         return this.userService.add(username);
@@ -40,12 +40,12 @@ export class UserController {
         // is the id a negative number ?
         // other checks...
 
-        if(this.ifDecimal(id)) {
-            throw new Error("Id is decimal !")
+        if (this.ifDecimal(id)) {
+            throw new Error('Id is decimal !');
         }
 
-        if(this.ifNegative(id)) {
-            throw new Error("Id is negative !");
+        if (this.ifNegative(id)) {
+            throw new Error('Id is negative !');
         }
 
         return this.userService.getById(id);
