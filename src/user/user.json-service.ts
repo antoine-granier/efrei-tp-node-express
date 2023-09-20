@@ -15,7 +15,7 @@ export class UserJSONService implements UserService {
         }
 
         // Créez un nouvel utilisateur
-        const newUser: User = { id: users.length > 0 ? users[users.length - 1].id + 1 : 0, username };
+        const newUser: User = new User(users.length > 0 ? users[users.length - 1].id + 1 : 0, username);
 
         // Ajoutez le nouvel utilisateur au tableau
         users.push(newUser);
